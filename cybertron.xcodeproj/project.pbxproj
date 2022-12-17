@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E4D8B06294DAE940077EAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B05294DAE940077EAB4 /* AppDelegate.swift */; };
+		7E4D8B08294DAE940077EAB4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B07294DAE940077EAB4 /* GameViewController.swift */; };
+		7E4D8B0B294DAE940077EAB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B09294DAE940077EAB4 /* Main.storyboard */; };
+		7E4D8B0E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B0C294DAE940077EAB4 /* LaunchScreen.storyboard */; };
+		7E4D8B16294DAE940077EAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B15294DAE940077EAB4 /* AppDelegate.swift */; };
+		7E4D8B18294DAE940077EAB4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B17294DAE940077EAB4 /* GameViewController.swift */; };
+		7E4D8B1B294DAE940077EAB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B19294DAE940077EAB4 /* Main.storyboard */; };
+		7E4D8B1E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B1C294DAE940077EAB4 /* LaunchScreen.storyboard */; };
+		7E4D8B26294DAE940077EAB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B25294DAE940077EAB4 /* AppDelegate.swift */; };
+		7E4D8B28294DAE940077EAB4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B27294DAE940077EAB4 /* GameViewController.swift */; };
+		7E4D8B2B294DAE940077EAB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B29294DAE940077EAB4 /* Main.storyboard */; };
+		7E4D8B2D294DAE940077EAB4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFA294DAE920077EAB4 /* Actions.sks */; };
+		7E4D8B2E294DAE940077EAB4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFA294DAE920077EAB4 /* Actions.sks */; };
+		7E4D8B2F294DAE940077EAB4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFA294DAE920077EAB4 /* Actions.sks */; };
+		7E4D8B30294DAE940077EAB4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFB294DAE920077EAB4 /* GameScene.sks */; };
+		7E4D8B31294DAE940077EAB4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFB294DAE920077EAB4 /* GameScene.sks */; };
+		7E4D8B32294DAE940077EAB4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFB294DAE920077EAB4 /* GameScene.sks */; };
+		7E4D8B33294DAE940077EAB4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFC294DAE920077EAB4 /* GameScene.swift */; };
+		7E4D8B34294DAE940077EAB4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFC294DAE920077EAB4 /* GameScene.swift */; };
+		7E4D8B35294DAE940077EAB4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFC294DAE920077EAB4 /* GameScene.swift */; };
+		7E4D8B36294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
+		7E4D8B37294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
+		7E4D8B38294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E4D8AFA294DAE920077EAB4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		7E4D8AFB294DAE920077EAB4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		7E4D8AFC294DAE920077EAB4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E4D8B02294DAE940077EAB4 /* cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4D8B05294DAE940077EAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E4D8B07294DAE940077EAB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7E4D8B0A294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E4D8B0D294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4D8B13294DAE940077EAB4 /* cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4D8B15294DAE940077EAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E4D8B17294DAE940077EAB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7E4D8B1A294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E4D8B1D294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4D8B23294DAE940077EAB4 /* cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4D8B25294DAE940077EAB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E4D8B27294DAE940077EAB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7E4D8B2A294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E4D8B2C294DAE940077EAB4 /* cybertron_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cybertron_macOS.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E4D8AFF294DAE940077EAB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B10294DAE940077EAB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B20294DAE940077EAB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E4D8AF4294DAE920077EAB4 = {
+			isa = PBXGroup;
+			children = (
+				7E4D8AF9294DAE920077EAB4 /* cybertron Shared */,
+				7E4D8B04294DAE940077EAB4 /* cybertron iOS */,
+				7E4D8B14294DAE940077EAB4 /* cybertron tvOS */,
+				7E4D8B24294DAE940077EAB4 /* cybertron macOS */,
+				7E4D8B03294DAE940077EAB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E4D8AF9294DAE920077EAB4 /* cybertron Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8AFA294DAE920077EAB4 /* Actions.sks */,
+				7E4D8AFB294DAE920077EAB4 /* GameScene.sks */,
+				7E4D8AFC294DAE920077EAB4 /* GameScene.swift */,
+				7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */,
+			);
+			path = "cybertron Shared";
+			sourceTree = "<group>";
+		};
+		7E4D8B03294DAE940077EAB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B02294DAE940077EAB4 /* cybertron.app */,
+				7E4D8B13294DAE940077EAB4 /* cybertron.app */,
+				7E4D8B23294DAE940077EAB4 /* cybertron.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E4D8B04294DAE940077EAB4 /* cybertron iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B05294DAE940077EAB4 /* AppDelegate.swift */,
+				7E4D8B07294DAE940077EAB4 /* GameViewController.swift */,
+				7E4D8B09294DAE940077EAB4 /* Main.storyboard */,
+				7E4D8B0C294DAE940077EAB4 /* LaunchScreen.storyboard */,
+			);
+			path = "cybertron iOS";
+			sourceTree = "<group>";
+		};
+		7E4D8B14294DAE940077EAB4 /* cybertron tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B15294DAE940077EAB4 /* AppDelegate.swift */,
+				7E4D8B17294DAE940077EAB4 /* GameViewController.swift */,
+				7E4D8B19294DAE940077EAB4 /* Main.storyboard */,
+				7E4D8B1C294DAE940077EAB4 /* LaunchScreen.storyboard */,
+			);
+			path = "cybertron tvOS";
+			sourceTree = "<group>";
+		};
+		7E4D8B24294DAE940077EAB4 /* cybertron macOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B25294DAE940077EAB4 /* AppDelegate.swift */,
+				7E4D8B27294DAE940077EAB4 /* GameViewController.swift */,
+				7E4D8B29294DAE940077EAB4 /* Main.storyboard */,
+				7E4D8B2C294DAE940077EAB4 /* cybertron_macOS.entitlements */,
+			);
+			path = "cybertron macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E4D8B01294DAE940077EAB4 /* cybertron iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4D8B3B294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron iOS" */;
+			buildPhases = (
+				7E4D8AFE294DAE940077EAB4 /* Sources */,
+				7E4D8AFF294DAE940077EAB4 /* Frameworks */,
+				7E4D8B00294DAE940077EAB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cybertron iOS";
+			productName = "cybertron iOS";
+			productReference = 7E4D8B02294DAE940077EAB4 /* cybertron.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E4D8B12294DAE940077EAB4 /* cybertron tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4D8B3E294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron tvOS" */;
+			buildPhases = (
+				7E4D8B0F294DAE940077EAB4 /* Sources */,
+				7E4D8B10294DAE940077EAB4 /* Frameworks */,
+				7E4D8B11294DAE940077EAB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cybertron tvOS";
+			productName = "cybertron tvOS";
+			productReference = 7E4D8B13294DAE940077EAB4 /* cybertron.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E4D8B22294DAE940077EAB4 /* cybertron macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4D8B41294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron macOS" */;
+			buildPhases = (
+				7E4D8B1F294DAE940077EAB4 /* Sources */,
+				7E4D8B20294DAE940077EAB4 /* Frameworks */,
+				7E4D8B21294DAE940077EAB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cybertron macOS";
+			productName = "cybertron macOS";
+			productReference = 7E4D8B23294DAE940077EAB4 /* cybertron.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E4D8AF5294DAE920077EAB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					7E4D8B01294DAE940077EAB4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					7E4D8B12294DAE940077EAB4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					7E4D8B22294DAE940077EAB4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 7E4D8AF8294DAE920077EAB4 /* Build configuration list for PBXProject "cybertron" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E4D8AF4294DAE920077EAB4;
+			productRefGroup = 7E4D8B03294DAE940077EAB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E4D8B01294DAE940077EAB4 /* cybertron iOS */,
+				7E4D8B12294DAE940077EAB4 /* cybertron tvOS */,
+				7E4D8B22294DAE940077EAB4 /* cybertron macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E4D8B00294DAE940077EAB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B30294DAE940077EAB4 /* GameScene.sks in Resources */,
+				7E4D8B0B294DAE940077EAB4 /* Main.storyboard in Resources */,
+				7E4D8B2D294DAE940077EAB4 /* Actions.sks in Resources */,
+				7E4D8B0E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */,
+				7E4D8B36294DAE940077EAB4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B11294DAE940077EAB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B31294DAE940077EAB4 /* GameScene.sks in Resources */,
+				7E4D8B1B294DAE940077EAB4 /* Main.storyboard in Resources */,
+				7E4D8B2E294DAE940077EAB4 /* Actions.sks in Resources */,
+				7E4D8B1E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */,
+				7E4D8B37294DAE940077EAB4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B21294DAE940077EAB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B2B294DAE940077EAB4 /* Main.storyboard in Resources */,
+				7E4D8B32294DAE940077EAB4 /* GameScene.sks in Resources */,
+				7E4D8B38294DAE940077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B2F294DAE940077EAB4 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E4D8AFE294DAE940077EAB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B33294DAE940077EAB4 /* GameScene.swift in Sources */,
+				7E4D8B08294DAE940077EAB4 /* GameViewController.swift in Sources */,
+				7E4D8B06294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B0F294DAE940077EAB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B34294DAE940077EAB4 /* GameScene.swift in Sources */,
+				7E4D8B18294DAE940077EAB4 /* GameViewController.swift in Sources */,
+				7E4D8B16294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E4D8B1F294DAE940077EAB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4D8B35294DAE940077EAB4 /* GameScene.swift in Sources */,
+				7E4D8B28294DAE940077EAB4 /* GameViewController.swift in Sources */,
+				7E4D8B26294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7E4D8B09294DAE940077EAB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4D8B0A294DAE940077EAB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E4D8B0C294DAE940077EAB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4D8B0D294DAE940077EAB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7E4D8B19294DAE940077EAB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4D8B1A294DAE940077EAB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E4D8B1C294DAE940077EAB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4D8B1D294DAE940077EAB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7E4D8B29294DAE940077EAB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4D8B2A294DAE940077EAB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E4D8B39294DAE940077EAB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E4D8B3A294DAE940077EAB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7E4D8B3C294DAE940077EAB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E4D8B3D294DAE940077EAB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E4D8B3F294DAE940077EAB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.1;
+			};
+			name = Debug;
+		};
+		7E4D8B40294DAE940077EAB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E4D8B42294DAE940077EAB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cybertron macOS/cybertron_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7E4D8B43294DAE940077EAB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cybertron macOS/cybertron_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W56SCHJ6N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.minotaurcreative.cybertron;
+				PRODUCT_NAME = cybertron;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E4D8AF8294DAE920077EAB4 /* Build configuration list for PBXProject "cybertron" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4D8B39294DAE940077EAB4 /* Debug */,
+				7E4D8B3A294DAE940077EAB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E4D8B3B294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4D8B3C294DAE940077EAB4 /* Debug */,
+				7E4D8B3D294DAE940077EAB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E4D8B3E294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4D8B3F294DAE940077EAB4 /* Debug */,
+				7E4D8B40294DAE940077EAB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E4D8B41294DAE940077EAB4 /* Build configuration list for PBXNativeTarget "cybertron macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4D8B42294DAE940077EAB4 /* Debug */,
+				7E4D8B43294DAE940077EAB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E4D8AF5294DAE920077EAB4 /* Project object */;
+}
