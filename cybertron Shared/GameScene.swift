@@ -14,6 +14,8 @@ class GameScene: SKScene {
     
     fileprivate var movementDirection: CGPoint = .zero
     
+    fileprivate var activeTapLocation: CGPoint?
+    
     #if os(OSX)
     fileprivate var upPressed: Bool = false
 
@@ -38,6 +40,8 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
+        physicsBody = .init(edgeLoopFrom: frame)
+        name = "scene"
         hero = .init(lives: 5)
         guard let hero = hero else { fatalError("Error creating hero") }
         addChild(hero)
@@ -49,10 +53,49 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        movementDirection = normalize(movementDirection)
-        hero?.position.x += movementSpeed * movementDirection.x
-        hero?.position.y += movementSpeed * movementDirection.y
-        print(movementDirection)
+        if let tapLocation = activeTapLocation, let hero = hero {
+            movementDirection = .init(x: tapLocation.x - hero.position.x, y: tapLocation.y - hero.position.y)
+            movementDirection = normalize(movementDirection)
+            let distanceSquared = pow(tapLocation.x - hero.position.x, 2) + pow(tapLocation.y - hero.position.y, 2)
+            if distanceSquared > 1 {
+                hero.position.x += movementSpeed * movementDirection.x
+                hero.position.y += movementSpeed * movementDirection.y
+            }
+        } else {
+            movementDirection = normalize(movementDirection)
+            hero?.position.x += movementSpeed * movementDirection.x
+            hero?.position.y += movementSpeed * movementDirection.y
+        }
+        
+        checkForCollisions()
+    }
+    
+    fileprivate func checkForCollisions() {
+        if let heroCollisions = hero?.physicsBody?.allContactedBodies() {
+            for collision in heroCollisions where collision.node != nil && (collision.node!.name ?? "").starts(with: "enemy") {
+                guard let node = collision.node as? SKSpriteNode else { continue }
+                node.removeFromParent()
+            }
+        }
+        
+        
+        for friendlyFire in scene!.children where (name ?? "").starts(with: "friendlyFire") {
+            if let friendlyFireCollisions = friendlyFire.physicsBody?.allContactedBodies() {
+                for collision in friendlyFireCollisions {
+                    guard let node = collision.node as? SKSpriteNode else { continue }
+                    guard let nodeName = node.name else { continue }
+                    switch nodeName {
+                    case let x where x.starts(with: "enemy"):
+                        node.removeFromParent()
+                    default:
+                        continue
+                    }
+                }
+            }
+        }
+        
+        
+        
     }
     
     fileprivate func normalize(_ point: CGPoint) -> CGPoint {
@@ -106,13 +149,15 @@ extension GameScene {
 extension GameScene {
 
     override func mouseDown(with event: NSEvent) {
-        
+        activeTapLocation = event.location(in: self)
     }
     
     override func mouseDragged(with event: NSEvent) {
+        activeTapLocation = event.location(in: self)
     }
     
     override func mouseUp(with event: NSEvent) {
+        activeTapLocation = nil
     }
     
     override func keyDown(with event: NSEvent) {

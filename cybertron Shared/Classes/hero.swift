@@ -19,6 +19,7 @@ class Hero: SKSpriteNode {
         let texture = SKTexture(imageNamed: "hero")
         super.init(texture: texture, color: .clear, size: texture.size())
         self.name = "hero"
+        self.physicsBody = .init(edgeLoopFrom: .init(origin: .init(x: 4, y: 4), size: .init(width: 8, height: 8)))
     }
     
     required init?(coder aDecoder: NSCoder) {
