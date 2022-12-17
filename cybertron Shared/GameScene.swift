@@ -8,11 +8,21 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    fileprivate var hero : Hero?
     
+    fileprivate let movementSpeed: CGFloat = 10
     
-    fileprivate var label : SKLabelNode?
-    fileprivate var spinnyNode : SKShapeNode?
+    fileprivate var movementDirection: CGPoint = .zero
+    
+    #if os(OSX)
+    fileprivate var upPressed: Bool = false
 
+    fileprivate var downPressed: Bool = false
+
+    fileprivate var leftPressed: Bool = false
+
+    fileprivate var rightPressed: Bool = false
+    #endif
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -28,40 +38,30 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 4.0
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        hero = .init(lives: 5)
+        guard let hero = hero else { fatalError("Error creating hero") }
+        addChild(hero)
     }
     
     override func didMove(to view: SKView) {
         self.setUpScene()
     }
-
-    func makeSpinny(at pos: CGPoint, color: SKColor) {
-        if let spinny = self.spinnyNode?.copy() as! SKShapeNode? {
-            spinny.position = pos
-            spinny.strokeColor = color
-            self.addChild(spinny)
-        }
-    }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        movementDirection = normalize(movementDirection)
+        hero?.position.x += movementSpeed * movementDirection.x
+        hero?.position.y += movementSpeed * movementDirection.y
+        print(movementDirection)
+    }
+    
+    fileprivate func normalize(_ point: CGPoint) -> CGPoint {
+        let length = sqrt(pow(point.x, 2) + pow(point.y, 2))
+        if length == 0 {
+            return .zero
+        } else {
+            return .init(x: point.x/length, y: point.y/length)
+        }
     }
 }
 
@@ -106,18 +106,67 @@ extension GameScene {
 extension GameScene {
 
     override func mouseDown(with event: NSEvent) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        self.makeSpinny(at: event.location(in: self), color: SKColor.green)
+        
     }
     
     override func mouseDragged(with event: NSEvent) {
-        self.makeSpinny(at: event.location(in: self), color: SKColor.blue)
     }
     
     override func mouseUp(with event: NSEvent) {
-        self.makeSpinny(at: event.location(in: self), color: SKColor.red)
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        switch event.keyCode {
+        case 123:
+            leftPressed = true
+        case 124:
+            rightPressed = true
+        case 125:
+            downPressed = true
+        case 126:
+            upPressed = true
+        default:
+            break
+        }
+        
+        setMovementDirectionForKeyboard()
+    }
+        
+    override func keyUp(with event: NSEvent) {
+        switch event.keyCode {
+        case 123:
+            leftPressed = false
+        case 124:
+            rightPressed = false
+        case 125:
+            downPressed = false
+        case 126:
+            upPressed = false
+        default:
+            break
+        }
+        
+        setMovementDirectionForKeyboard()
+    }
+    
+    fileprivate func setMovementDirectionForKeyboard() {
+        var xDirection: CGFloat = 0.0
+        var yDirection: CGFloat = 0.0
+        
+        if leftPressed {
+            xDirection -= 1.0
+        }
+        if rightPressed {
+            xDirection += 1.0
+        }
+        if upPressed {
+            yDirection += 1.0
+        }
+        if downPressed {
+            yDirection -= 1.0
+        }
+    
+        movementDirection = .init(x: xDirection, y: yDirection)
     }
 
 }

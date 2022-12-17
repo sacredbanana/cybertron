@@ -30,6 +30,9 @@
 		7E4D8B36294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
 		7E4D8B37294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
 		7E4D8B38294DAE940077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */; };
+		7E4D8B46294DBBEB0077EAB4 /* hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B45294DBBEB0077EAB4 /* hero.swift */; };
+		7E4D8B47294DBBEB0077EAB4 /* hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B45294DBBEB0077EAB4 /* hero.swift */; };
+		7E4D8B48294DBBEB0077EAB4 /* hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B45294DBBEB0077EAB4 /* hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,7 @@
 		7E4D8B27294DAE940077EAB4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7E4D8B2A294DAE940077EAB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E4D8B2C294DAE940077EAB4 /* cybertron_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cybertron_macOS.entitlements; sourceTree = "<group>"; };
+		7E4D8B45294DBBEB0077EAB4 /* hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				7E4D8AFA294DAE920077EAB4 /* Actions.sks */,
 				7E4D8AFB294DAE920077EAB4 /* GameScene.sks */,
 				7E4D8AFC294DAE920077EAB4 /* GameScene.swift */,
+				7E4D8B44294DBB530077EAB4 /* Classes */,
 				7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */,
 			);
 			path = "cybertron Shared";
@@ -142,6 +147,14 @@
 				7E4D8B2C294DAE940077EAB4 /* cybertron_macOS.entitlements */,
 			);
 			path = "cybertron macOS";
+			sourceTree = "<group>";
+		};
+		7E4D8B44294DBB530077EAB4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B45294DBBEB0077EAB4 /* hero.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +298,7 @@
 				7E4D8B33294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B08294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B06294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+				7E4D8B46294DBBEB0077EAB4 /* hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +309,7 @@
 				7E4D8B34294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B18294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B16294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+				7E4D8B47294DBBEB0077EAB4 /* hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +320,7 @@
 				7E4D8B35294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B28294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B26294DAE940077EAB4 /* AppDelegate.swift in Sources */,
+				7E4D8B48294DBBEB0077EAB4 /* hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,12 +488,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,12 +520,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,6 +553,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -560,6 +582,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -591,6 +615,8 @@
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -620,6 +646,8 @@
 				DEVELOPMENT_TEAM = 2W56SCHJ6N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Cybertron;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
