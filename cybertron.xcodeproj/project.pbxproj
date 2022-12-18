@@ -39,6 +39,18 @@
 		7E4D8B53294F04CF0077EAB4 /* hero.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B52294F04CF0077EAB4 /* hero.fsh */; };
 		7E4D8B54294F04CF0077EAB4 /* hero.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B52294F04CF0077EAB4 /* hero.fsh */; };
 		7E4D8B55294F04CF0077EAB4 /* hero.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B52294F04CF0077EAB4 /* hero.fsh */; };
+		7E4D8B57294F44510077EAB4 /* enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B56294F44510077EAB4 /* enemy.swift */; };
+		7E4D8B58294F44510077EAB4 /* enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B56294F44510077EAB4 /* enemy.swift */; };
+		7E4D8B59294F44510077EAB4 /* enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B56294F44510077EAB4 /* enemy.swift */; };
+		7E4D8B5C294F4CDA0077EAB4 /* caterpillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */; };
+		7E4D8B5D294F4CDA0077EAB4 /* caterpillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */; };
+		7E4D8B5E294F4CDA0077EAB4 /* caterpillar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */; };
+		7E4D8B62294F577C0077EAB4 /* Explosion Regular.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */; };
+		7E4D8B63294F577C0077EAB4 /* Explosion Regular.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */; };
+		7E4D8B64294F577C0077EAB4 /* Explosion Regular.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */; };
+		7E4D8B65294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
+		7E4D8B66294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
+		7E4D8B67294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +76,10 @@
 		7E4D8B45294DBBEB0077EAB4 /* hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hero.swift; sourceTree = "<group>"; };
 		7E4D8B4A294E0C320077EAB4 /* background-level1.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = "background-level1.fsh"; sourceTree = "<group>"; };
 		7E4D8B52294F04CF0077EAB4 /* hero.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = hero.fsh; sourceTree = "<group>"; };
+		7E4D8B56294F44510077EAB4 /* enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemy.swift; sourceTree = "<group>"; };
+		7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caterpillar.swift; sourceTree = "<group>"; };
+		7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Explosion Regular.sks"; sourceTree = "<group>"; };
+		7E4D8B61294F577C0077EAB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +124,7 @@
 				7E4D8AFA294DAE920077EAB4 /* Actions.sks */,
 				7E4D8AFB294DAE920077EAB4 /* GameScene.sks */,
 				7E4D8AFC294DAE920077EAB4 /* GameScene.swift */,
+				7E4D8B5F294F56E50077EAB4 /* Particle Effects */,
 				7E4D8B49294E0BE20077EAB4 /* Shaders */,
 				7E4D8B44294DBB530077EAB4 /* Classes */,
 				7E4D8AFD294DAE940077EAB4 /* Assets.xcassets */,
@@ -162,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				7E4D8B45294DBBEB0077EAB4 /* hero.swift */,
+				7E4D8B5A294F4C9F0077EAB4 /* Enemies */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -173,6 +191,24 @@
 				7E4D8B52294F04CF0077EAB4 /* hero.fsh */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		7E4D8B5A294F4C9F0077EAB4 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B56294F44510077EAB4 /* enemy.swift */,
+				7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */,
+			);
+			path = Enemies;
+			sourceTree = "<group>";
+		};
+		7E4D8B5F294F56E50077EAB4 /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */,
+				7E4D8B61294F577C0077EAB4 /* Assets.xcassets */,
+			);
+			path = "Particle Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +318,8 @@
 				7E4D8B2D294DAE940077EAB4 /* Actions.sks in Resources */,
 				7E4D8B0E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */,
 				7E4D8B36294DAE940077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B65294F577C0077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B62294F577C0077EAB4 /* Explosion Regular.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +334,8 @@
 				7E4D8B2E294DAE940077EAB4 /* Actions.sks in Resources */,
 				7E4D8B1E294DAE940077EAB4 /* LaunchScreen.storyboard in Resources */,
 				7E4D8B37294DAE940077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B66294F577C0077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B63294F577C0077EAB4 /* Explosion Regular.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +347,9 @@
 				7E4D8B55294F04CF0077EAB4 /* hero.fsh in Resources */,
 				7E4D8B32294DAE940077EAB4 /* GameScene.sks in Resources */,
 				7E4D8B38294DAE940077EAB4 /* Assets.xcassets in Resources */,
+				7E4D8B64294F577C0077EAB4 /* Explosion Regular.sks in Resources */,
 				7E4D8B4D294E0C320077EAB4 /* background-level1.fsh in Resources */,
+				7E4D8B67294F577C0077EAB4 /* Assets.xcassets in Resources */,
 				7E4D8B2F294DAE940077EAB4 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +361,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4D8B57294F44510077EAB4 /* enemy.swift in Sources */,
+				7E4D8B5C294F4CDA0077EAB4 /* caterpillar.swift in Sources */,
 				7E4D8B33294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B08294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B06294DAE940077EAB4 /* AppDelegate.swift in Sources */,
@@ -330,6 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4D8B58294F44510077EAB4 /* enemy.swift in Sources */,
+				7E4D8B5D294F4CDA0077EAB4 /* caterpillar.swift in Sources */,
 				7E4D8B34294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B18294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B16294DAE940077EAB4 /* AppDelegate.swift in Sources */,
@@ -341,6 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4D8B59294F44510077EAB4 /* enemy.swift in Sources */,
+				7E4D8B5E294F4CDA0077EAB4 /* caterpillar.swift in Sources */,
 				7E4D8B35294DAE940077EAB4 /* GameScene.swift in Sources */,
 				7E4D8B28294DAE940077EAB4 /* GameViewController.swift in Sources */,
 				7E4D8B26294DAE940077EAB4 /* AppDelegate.swift in Sources */,

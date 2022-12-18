@@ -7,8 +7,17 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+let heroCategory: UInt32 = 1 << 0
+let friendlyFireCategory: UInt32 = 1 << 1
+let enemyCategory: UInt32 = 1 << 2
+let sceneBorderCategory: UInt32 = 1 << 3
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
     fileprivate var hero : Hero?
+    
+    fileprivate var scoreLabel: SKLabelNode?
+    
+    fileprivate var livesLabel: SKLabelNode?
     
     fileprivate let movementSpeed: CGFloat = 10
     
@@ -17,6 +26,18 @@ class GameScene: SKScene {
     fileprivate var fireDirection: CGVector = .init(dx: 1.0, dy: 0.0)
     
     fileprivate var activeTapLocation: CGPoint?
+    
+    fileprivate var score: UInt32 = 0 {
+        didSet {
+            scoreLabel?.text = "Score: \(score)"
+        }
+    }
+    
+    fileprivate var lives: UInt32 = 5 {
+        didSet {
+            livesLabel?.text = "Lives: \(lives)"
+        }
+    }
     
     #if os(OSX)
     fileprivate var upPressed: Bool = false
@@ -42,10 +63,23 @@ class GameScene: SKScene {
     }
     
     func setUpScene() {
+        physicsWorld.contactDelegate = self
         physicsBody = .init(edgeLoopFrom: frame)
+        physicsBody?.categoryBitMask = sceneBorderCategory
+        physicsBody?.collisionBitMask = 0
+        physicsBody?.contactTestBitMask = 0
         name = "scene"
-        hero = .init(lives: 5)
+        
+        scoreLabel = .init(fontNamed: "Chalkboard")
+        guard let scoreLabel = scoreLabel else { fatalError("Error creating score label") }
+        scoreLabel.text = "Score: \(score)"
+        scoreLabel.position = .init(x: frame.minX + 100, y: frame.maxY - 30)
+        addChild(scoreLabel)
+        
+        hero = .init()
         guard let hero = hero else { fatalError("Error creating hero") }
+        hero.physicsBody?.categoryBitMask = heroCategory
+        hero.physicsBody?.collisionBitMask = enemyCategory | sceneBorderCategory
         
         addChild(hero)
         
@@ -61,7 +95,6 @@ class GameScene: SKScene {
         
         let background = SKShapeNode(rect: frame)
         background.name = "background"
-        background.physicsBody = .init(edgeLoopFrom: background.frame)
         
         let backgroundShader = SKShader(fileNamed: "background-level1")
         let resolution = SKUniform(name: "v2Resolution", vectorFloat2: .init(x: Float(background.frame.width), y: Float(background.frame.height)))
@@ -71,17 +104,50 @@ class GameScene: SKScene {
         
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             let friendlyFire = SKSpriteNode(imageNamed: "weapon-normal")
-            friendlyFire.name = "friendlyFire"
+            friendlyFire.name = "friendlyFire normal"
             friendlyFire.physicsBody = .init(rectangleOf: .init(width: 2.0, height: 3.0))
+            friendlyFire.physicsBody?.categoryBitMask = friendlyFireCategory
+            friendlyFire.physicsBody?.collisionBitMask = enemyCategory
+            friendlyFire.physicsBody?.contactTestBitMask = enemyCategory | sceneBorderCategory
             friendlyFire.position = hero.position
             friendlyFire.run(.sequence([.rotate(byAngle: -atan(self.fireDirection.dx/self.fireDirection.dy), duration: 0.0),
-                                        .applyForce(self.fireDirection, duration: 1.0)]))
+                                        .applyForce(self.fireDirection, duration: 1.0),
+                                        .wait(forDuration: 2),
+                                        .removeFromParent()]))
             self.addChild(friendlyFire)
         }
     }
     
     override func didMove(to view: SKView) {
         self.setUpScene()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+
+        switch contactMask {
+        case heroCategory | enemyCategory:
+            die()
+        case friendlyFireCategory | enemyCategory:
+            guard let enemy = (contact.bodyA.categoryBitMask == enemyCategory ? contact.bodyA.node : contact.bodyB.node) as? Enemy else { return }
+            enemy.hit(damage: 1)
+            if enemy.isDead {
+                score += enemy.pointWorth
+                guard let explosion = SKEmitterNode(fileNamed: "Explosion Regular") else { fatalError("Error loading explosion")}
+                explosion.position = contact.contactPoint
+                addChild(explosion)
+                explosion.run(.sequence([.wait(forDuration: 1.0),
+                                         .run {
+                                             explosion.particleBirthRate = 0
+                                         },
+                                         .wait(forDuration: 2.0),
+                                         .removeFromParent()]))
+                
+                enemy.removeFromParent()
+            }
+        default:
+            break
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -103,36 +169,6 @@ class GameScene: SKScene {
         if movementDirection != .zero {
             fireDirection = movementDirection
         }
-        
-        checkForCollisions()
-    }
-    
-    fileprivate func checkForCollisions() {
-        if let heroCollisions = hero?.physicsBody?.allContactedBodies() {
-            for collision in heroCollisions where collision.node != nil && (collision.node!.name ?? "").starts(with: "enemy") {
-                guard let node = collision.node as? SKSpriteNode else { continue }
-                node.removeFromParent()
-            }
-        }
-        
-        
-        for friendlyFire in scene!.children where (name ?? "").starts(with: "friendlyFire") {
-            if let friendlyFireCollisions = friendlyFire.physicsBody?.allContactedBodies() {
-                for collision in friendlyFireCollisions {
-                    guard let node = collision.node as? SKSpriteNode else { continue }
-                    guard let nodeName = node.name else { continue }
-                    switch nodeName {
-                    case let x where x.starts(with: "enemy"):
-                        node.removeFromParent()
-                    default:
-                        continue
-                    }
-                }
-            }
-        }
-        
-        
-        
     }
     
     fileprivate func normalize(_ vector: CGVector) -> CGVector {
@@ -142,6 +178,11 @@ class GameScene: SKScene {
         } else {
             return .init(dx: vector.dx/length, dy: vector.dy/length)
         }
+    }
+    
+    fileprivate func die() {
+        lives = lives - 1
+        hero?.position = .zero
     }
 }
 

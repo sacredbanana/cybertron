@@ -8,14 +8,9 @@
 import SpriteKit
 
 class Hero: SKSpriteNode {
-    var lives: UInt = 5
-    
-    var score: UInt = 0
-    
     var powerup: String? = nil
     
-    init(lives: UInt) {
-        self.lives = lives
+    init() {
         let texture = SKTexture(imageNamed: "hero")
         super.init(texture: texture, color: .clear, size: texture.size())
         self.name = "hero"
