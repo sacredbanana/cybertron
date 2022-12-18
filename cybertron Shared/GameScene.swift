@@ -12,7 +12,9 @@ class GameScene: SKScene {
     
     fileprivate let movementSpeed: CGFloat = 10
     
-    fileprivate var movementDirection: CGPoint = .zero
+    fileprivate var movementDirection: CGVector = .zero
+    
+    fileprivate var fireDirection: CGVector = .init(dx: 1.0, dy: 0.0)
     
     fileprivate var activeTapLocation: CGPoint?
     
@@ -34,7 +36,7 @@ class GameScene: SKScene {
         }
         
         // Set the scale mode to scale to fit the window
-        scene.scaleMode = .aspectFill
+        scene.scaleMode = .aspectFit
         
         return scene
     }
@@ -44,7 +46,38 @@ class GameScene: SKScene {
         name = "scene"
         hero = .init(lives: 5)
         guard let hero = hero else { fatalError("Error creating hero") }
+        
         addChild(hero)
+        
+        let uniforms: [SKUniform] = [
+            SKUniform(name: "u_speed", float: 1),
+            SKUniform(name: "u_strength", float: 3),
+            SKUniform(name: "u_frequency", float: 20)
+        ]
+        
+        let heroShader = SKShader(fileNamed: "hero")
+        heroShader.uniforms = uniforms
+        hero.shader = heroShader
+        
+        let background = SKShapeNode(rect: frame)
+        background.name = "background"
+        background.physicsBody = .init(edgeLoopFrom: background.frame)
+        
+        let backgroundShader = SKShader(fileNamed: "background-level1")
+        let resolution = SKUniform(name: "v2Resolution", vectorFloat2: .init(x: Float(background.frame.width), y: Float(background.frame.height)))
+        backgroundShader.uniforms = [resolution]
+        background.fillShader = backgroundShader
+        addChild(background)
+        
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
+            let friendlyFire = SKSpriteNode(imageNamed: "weapon-normal")
+            friendlyFire.name = "friendlyFire"
+            friendlyFire.physicsBody = .init(rectangleOf: .init(width: 2.0, height: 3.0))
+            friendlyFire.position = hero.position
+            friendlyFire.run(.sequence([.rotate(byAngle: -atan(self.fireDirection.dx/self.fireDirection.dy), duration: 0.0),
+                                        .applyForce(self.fireDirection, duration: 1.0)]))
+            self.addChild(friendlyFire)
+        }
     }
     
     override func didMove(to view: SKView) {
@@ -54,17 +87,21 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         if let tapLocation = activeTapLocation, let hero = hero {
-            movementDirection = .init(x: tapLocation.x - hero.position.x, y: tapLocation.y - hero.position.y)
+            movementDirection = .init(dx: tapLocation.x - hero.position.x, dy: tapLocation.y - hero.position.y)
             movementDirection = normalize(movementDirection)
             let distanceSquared = pow(tapLocation.x - hero.position.x, 2) + pow(tapLocation.y - hero.position.y, 2)
             if distanceSquared > 1 {
-                hero.position.x += movementSpeed * movementDirection.x
-                hero.position.y += movementSpeed * movementDirection.y
+                hero.position.x += movementSpeed * movementDirection.dx
+                hero.position.y += movementSpeed * movementDirection.dy
             }
         } else {
             movementDirection = normalize(movementDirection)
-            hero?.position.x += movementSpeed * movementDirection.x
-            hero?.position.y += movementSpeed * movementDirection.y
+            hero?.position.x += movementSpeed * movementDirection.dx
+            hero?.position.y += movementSpeed * movementDirection.dy
+        }
+        
+        if movementDirection != .zero {
+            fireDirection = movementDirection
         }
         
         checkForCollisions()
@@ -98,12 +135,12 @@ class GameScene: SKScene {
         
     }
     
-    fileprivate func normalize(_ point: CGPoint) -> CGPoint {
-        let length = sqrt(pow(point.x, 2) + pow(point.y, 2))
+    fileprivate func normalize(_ vector: CGVector) -> CGVector {
+        let length = sqrt(pow(vector.dx, 2) + pow(vector.dy, 2))
         if length == 0 {
             return .zero
         } else {
-            return .init(x: point.x/length, y: point.y/length)
+            return .init(dx: vector.dx/length, dy: vector.dy/length)
         }
     }
 }
@@ -211,7 +248,7 @@ extension GameScene {
             yDirection -= 1.0
         }
     
-        movementDirection = .init(x: xDirection, y: yDirection)
+        movementDirection = .init(dx: xDirection, dy: yDirection)
     }
 
 }
