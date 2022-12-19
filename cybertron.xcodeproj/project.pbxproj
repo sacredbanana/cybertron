@@ -51,6 +51,9 @@
 		7E4D8B65294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
 		7E4D8B66294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
 		7E4D8B67294F577C0077EAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B61294F577C0077EAB4 /* Assets.xcassets */; };
+		7E4D8B69295004010077EAB4 /* scene.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B68295004010077EAB4 /* scene.fsh */; };
+		7E4D8B6A295004010077EAB4 /* scene.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B68295004010077EAB4 /* scene.fsh */; };
+		7E4D8B6B295004010077EAB4 /* scene.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7E4D8B68295004010077EAB4 /* scene.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,7 @@
 		7E4D8B5B294F4CDA0077EAB4 /* caterpillar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caterpillar.swift; sourceTree = "<group>"; };
 		7E4D8B60294F577C0077EAB4 /* Explosion Regular.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Explosion Regular.sks"; sourceTree = "<group>"; };
 		7E4D8B61294F577C0077EAB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E4D8B68295004010077EAB4 /* scene.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = scene.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 			children = (
 				7E4D8B4A294E0C320077EAB4 /* background-level1.fsh */,
 				7E4D8B52294F04CF0077EAB4 /* hero.fsh */,
+				7E4D8B68295004010077EAB4 /* scene.fsh */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4D8B69295004010077EAB4 /* scene.fsh in Resources */,
 				7E4D8B4B294E0C320077EAB4 /* background-level1.fsh in Resources */,
 				7E4D8B30294DAE940077EAB4 /* GameScene.sks in Resources */,
 				7E4D8B0B294DAE940077EAB4 /* Main.storyboard in Resources */,
@@ -327,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4D8B6A295004010077EAB4 /* scene.fsh in Resources */,
 				7E4D8B4C294E0C320077EAB4 /* background-level1.fsh in Resources */,
 				7E4D8B31294DAE940077EAB4 /* GameScene.sks in Resources */,
 				7E4D8B1B294DAE940077EAB4 /* Main.storyboard in Resources */,
@@ -344,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E4D8B2B294DAE940077EAB4 /* Main.storyboard in Resources */,
+				7E4D8B6B295004010077EAB4 /* scene.fsh in Resources */,
 				7E4D8B55294F04CF0077EAB4 /* hero.fsh in Resources */,
 				7E4D8B32294DAE940077EAB4 /* GameScene.sks in Resources */,
 				7E4D8B38294DAE940077EAB4 /* Assets.xcassets in Resources */,

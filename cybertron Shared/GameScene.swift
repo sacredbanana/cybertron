@@ -63,18 +63,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setUpScene() {
+        let resolution = SKUniform(name: "v2Resolution", vectorFloat2: .init(x: Float(frame.width), y: Float(frame.height)))
+    
         physicsWorld.contactDelegate = self
         physicsBody = .init(edgeLoopFrom: frame)
         physicsBody?.categoryBitMask = sceneBorderCategory
         physicsBody?.collisionBitMask = 0
         physicsBody?.contactTestBitMask = 0
         name = "scene"
+        shouldEnableEffects = true
+        let sceneShader = SKShader(fileNamed: "scene")
+        shader = sceneShader
+        
         
         scoreLabel = .init(fontNamed: "Chalkboard")
         guard let scoreLabel = scoreLabel else { fatalError("Error creating score label") }
         scoreLabel.text = "Score: \(score)"
-        scoreLabel.position = .init(x: frame.minX + 100, y: frame.maxY - 30)
+        scoreLabel.fontSize = 100
+        scoreLabel.horizontalAlignmentMode = .left
+        scoreLabel.position = .init(x: frame.minX + 100, y: frame.maxY - 100)
         addChild(scoreLabel)
+        
+        livesLabel = .init(fontNamed: "Chalkboard")
+        guard let livesLabel = livesLabel else { fatalError("Error creating lives label") }
+        livesLabel.text = "Lives: \(lives)"
+        livesLabel.fontSize = 100
+        livesLabel.horizontalAlignmentMode = .left
+        livesLabel.position = .init(x: frame.maxX - 400, y: frame.maxY - 100)
+        addChild(livesLabel)
         
         hero = .init()
         guard let hero = hero else { fatalError("Error creating hero") }
@@ -92,12 +108,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let heroShader = SKShader(fileNamed: "hero")
         heroShader.uniforms = uniforms
         hero.shader = heroShader
-        
+                
         let background = SKShapeNode(rect: frame)
         background.name = "background"
+        background.strokeColor = .clear
         
         let backgroundShader = SKShader(fileNamed: "background-level1")
-        let resolution = SKUniform(name: "v2Resolution", vectorFloat2: .init(x: Float(background.frame.width), y: Float(background.frame.height)))
         backgroundShader.uniforms = [resolution]
         background.fillShader = backgroundShader
         addChild(background)
@@ -105,6 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             let friendlyFire = SKSpriteNode(imageNamed: "weapon-normal")
             friendlyFire.name = "friendlyFire normal"
+            friendlyFire.setScale(2.0)
             friendlyFire.physicsBody = .init(rectangleOf: .init(width: 2.0, height: 3.0))
             friendlyFire.physicsBody?.categoryBitMask = friendlyFireCategory
             friendlyFire.physicsBody?.collisionBitMask = enemyCategory
@@ -116,10 +133,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                         .removeFromParent()]))
             self.addChild(friendlyFire)
         }
+        
+        for enemy in children where enemy is Enemy {
+            (enemy as? Enemy)?.activateAI()
+        }
     }
     
     override func didMove(to view: SKView) {
         self.setUpScene()
+    }
+    
+    fileprivate func hitEnemy(_ enemy: Enemy, contactPoint: CGPoint) {
+        enemy.hit(damage: 1)
+        if enemy.isDead {
+            score += enemy.pointWorth
+            guard let explosion = SKEmitterNode(fileNamed: "Explosion Regular") else { fatalError("Error loading explosion")}
+            explosion.position = contactPoint
+            addChild(explosion)
+            explosion.run(.sequence([.wait(forDuration: 1.0),
+                                     .run {
+                                         explosion.particleBirthRate = 0
+                                     },
+                                     .wait(forDuration: 2.0),
+                                     .removeFromParent()]))
+            
+            enemy.removeFromParent()
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -130,21 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             die()
         case friendlyFireCategory | enemyCategory:
             guard let enemy = (contact.bodyA.categoryBitMask == enemyCategory ? contact.bodyA.node : contact.bodyB.node) as? Enemy else { return }
-            enemy.hit(damage: 1)
-            if enemy.isDead {
-                score += enemy.pointWorth
-                guard let explosion = SKEmitterNode(fileNamed: "Explosion Regular") else { fatalError("Error loading explosion")}
-                explosion.position = contact.contactPoint
-                addChild(explosion)
-                explosion.run(.sequence([.wait(forDuration: 1.0),
-                                         .run {
-                                             explosion.particleBirthRate = 0
-                                         },
-                                         .wait(forDuration: 2.0),
-                                         .removeFromParent()]))
-                
-                enemy.removeFromParent()
-            }
+            hitEnemy(enemy, contactPoint: contact.contactPoint)
         default:
             break
         }
@@ -168,6 +193,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if movementDirection != .zero {
             fireDirection = movementDirection
+        }
+        
+        for enemy in children where enemy is Enemy {
+            (enemy as? Enemy)?.heroPosition = hero?.position ?? .zero
         }
     }
     

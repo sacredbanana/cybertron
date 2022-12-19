@@ -18,11 +18,19 @@ class Enemy: SKSpriteNode {
         }
     }
     
+    var heroPosition: CGPoint = .zero
+    
+    var action: SKAction = .init()
+    
     func hit(damage: UInt32) {
         if hp >= damage {
             hp -= damage
         } else {
             hp = 0
         }
+    }
+    
+    func activateAI() {
+        run(action)
     }
 }
